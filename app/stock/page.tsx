@@ -24,8 +24,8 @@ export default function StockPage() {
 
       {/* Main Content */}
       <main className="flex flex-col md:flex-row justify-between items-start px-6 py-8 gap-10">
-        {/* Left: Buttons */}
-        <div className="flex flex-col md:flex-col gap-4">
+        {/* Left: Buttons in one row */}
+        <div className="flex flex-row gap-4">
           <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
             <FaPlus /> Add Record
           </button>
