@@ -1,17 +1,23 @@
+"use client"; // if using App Router (in app directory)
+
 import Image from "next/image";
 import { FaPlus, FaEye, FaShoppingCart } from "react-icons/fa";
+import { useRouter } from "next/navigation"; // for App Router
+// use 'next/router' for pages directory
 
 export default function StockPage() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen bg-white text-gray-800">
-      {/* Navbar */}
+      {/* Header */}
       <header className="flex justify-between items-center p-4 border-b shadow-sm">
         <div className="flex items-center space-x-2">
           <div className="w-4 h-4 bg-orange-500 rounded-full"></div>
           <h1 className="text-xl font-semibold">StockEasy</h1>
         </div>
-
         <nav className="flex space-x-6 font-medium">
+          {/* Links */}
           <a href="#" className="text-gray-600 hover:text-black">Profile</a>
           <a href="#" className="text-orange-500 font-semibold">Stock</a>
           <a href="#" className="text-gray-600 hover:text-black">Customer</a>
@@ -22,11 +28,14 @@ export default function StockPage() {
         </nav>
       </header>
 
-      {/* Main Content */}
+      {/* Main */}
       <main className="flex flex-col md:flex-row justify-between items-start px-6 py-8 gap-10">
-        {/* Left: Buttons in one row */}
+        {/* Left Buttons */}
         <div className="flex flex-row gap-4">
-          <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
+          <button
+            className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2"
+            onClick={() => router.push("/addrecord")} // ✅ navigate to addrecord
+          >
             <FaPlus /> Add Record
           </button>
           <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
@@ -37,7 +46,7 @@ export default function StockPage() {
           </button>
         </div>
 
-        {/* Right: Message + Illustration */}
+        {/* Right Content */}
         <div className="text-right md:text-left max-w-xl md:ml-auto">
           <h2 className="text-3xl font-semibold mb-2">StockEasy</h2>
           <p className="text-gray-600 mb-6">
