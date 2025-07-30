@@ -22,9 +22,10 @@ export default function StockPage() {
         </nav>
       </header>
 
-      {/* Buttons at top-left */}
-      <div className="px-6 py-4">
-        <div className="flex flex-col md:flex-row gap-4">
+      {/* Main Content */}
+      <main className="flex flex-col md:flex-row justify-between items-start px-6 py-8 gap-10">
+        {/* Left: Buttons */}
+        <div className="flex flex-col md:flex-col gap-4">
           <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
             <FaPlus /> Add Record
           </button>
@@ -35,12 +36,9 @@ export default function StockPage() {
             <FaShoppingCart /> Sell
           </button>
         </div>
-      </div>
 
-      {/* Main Content */}
-      <main className="flex flex-col md:flex-row justify-between items-center px-6 py-8 gap-10">
-        {/* Text + Illustration */}
-        <div className="text-center max-w-xl">
+        {/* Right: Message + Illustration */}
+        <div className="text-right md:text-left max-w-xl md:ml-auto">
           <h2 className="text-3xl font-semibold mb-2">StockEasy</h2>
           <p className="text-gray-600 mb-6">
             Now it is very easy to maintain stock. <br />
