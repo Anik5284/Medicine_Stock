@@ -22,21 +22,23 @@ export default function StockPage() {
         </nav>
       </header>
 
-      {/* Main Content */}
-      <main className="flex flex-col md:flex-row justify-between items-center px-6 py-8 gap-10">
-        {/* Buttons in a row */}
-        <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto justify-center">
-          <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2 justify-center">
+      {/* Buttons at top-left */}
+      <div className="px-6 py-4">
+        <div className="flex flex-col md:flex-row gap-4">
+          <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
             <FaPlus /> Add Record
           </button>
-          <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2 justify-center">
+          <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
             <FaEye /> View Record
           </button>
-          <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2 justify-center">
+          <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
             <FaShoppingCart /> Sell
           </button>
         </div>
+      </div>
 
+      {/* Main Content */}
+      <main className="flex flex-col md:flex-row justify-between items-center px-6 py-8 gap-10">
         {/* Text + Illustration */}
         <div className="text-center max-w-xl">
           <h2 className="text-3xl font-semibold mb-2">StockEasy</h2>
