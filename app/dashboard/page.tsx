@@ -1,9 +1,8 @@
-"use client"; // if using App Router (in app directory)
+"use client";
 
 import Image from "next/image";
 import { FaPlus, FaEye, FaShoppingCart } from "react-icons/fa";
-import { useRouter } from "next/navigation"; // for App Router
-// use 'next/router' for pages directory
+import { useRouter } from "next/navigation";
 
 export default function StockPage() {
   const router = useRouter();
@@ -17,7 +16,6 @@ export default function StockPage() {
           <h1 className="text-xl font-semibold">StockEasy</h1>
         </div>
         <nav className="flex space-x-6 font-medium">
-          {/* Links */}
           <a href="#" className="text-gray-600 hover:text-black">Profile</a>
           <a href="#" className="text-orange-500 font-semibold">Stock</a>
           <a href="#" className="text-gray-600 hover:text-black">Customer</a>
@@ -28,17 +26,20 @@ export default function StockPage() {
         </nav>
       </header>
 
-      {/* Main */}
+      {/* Main Content */}
       <main className="flex flex-col md:flex-row justify-between items-start px-6 py-8 gap-10">
         {/* Left Buttons */}
         <div className="flex flex-row gap-4">
           <button
             className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2"
-            onClick={() => router.push("/addrecord")} // ✅ navigate to addrecord
+            onClick={() => router.push("/addrecord")}
           >
             <FaPlus /> Add Record
           </button>
-          <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
+          <button
+            className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2"
+            onClick={() => router.push("/viewrecord")}
+          >
             <FaEye /> View Record
           </button>
           <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
@@ -46,7 +47,7 @@ export default function StockPage() {
           </button>
         </div>
 
-        {/* Right Content */}
+        {/* Right Side */}
         <div className="text-right md:text-left max-w-xl md:ml-auto">
           <h2 className="text-3xl font-semibold mb-2">StockEasy</h2>
           <p className="text-gray-600 mb-6">
