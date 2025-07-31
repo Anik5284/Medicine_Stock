@@ -2,20 +2,12 @@
 
 import Head from 'next/head';
 
-const mockData = Array(8).fill({
-  batchNo: 
-  medName: 
-  manfName: 
-  manfDate: 
-  expDate: 
-  buyingCost: 
-  mrp: 
-  discount: 
-  consumerCost: 1350,
-  prescription: 'Y'
-});
-
 export default function Home() {
+  const tableHeaders = [
+    "Batch No", "Med Name", "Manf. Name", "Manf Date", "Exp. Date",
+    "Buying Cost", "MRP", "Discount Cost", "Consumer Cost", "Prescription"
+  ];
+
   return (
     <>
       <Head>
@@ -50,33 +42,17 @@ export default function Home() {
           <table className="min-w-full border border-gray-200 text-sm">
             <thead className="bg-gray-100">
               <tr>
-                <th className="px-3 py-2 border">Batch No</th>
-                <th className="px-3 py-2 border">Med Name</th>
-                <th className="px-3 py-2 border">Manf. Name</th>
-                <th className="px-3 py-2 border">Manf Date</th>
-                <th className="px-3 py-2 border">Exp. Date</th>
-                <th className="px-3 py-2 border">Buying Cost</th>
-                <th className="px-3 py-2 border">MRP</th>
-                <th className="px-3 py-2 border">Discount Cost</th>
-                <th className="px-3 py-2 border">Consumer Cost</th>
-                <th className="px-3 py-2 border">Prescription</th>
+                {tableHeaders.map((header, index) => (
+                  <th key={index} className="px-3 py-2 border">{header}</th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {mockData.map((item, idx) => (
-                <tr key={idx} className="text-center">
-                  <td className="border px-2 py-1">{item.batchNo}</td>
-                  <td className="border px-2 py-1">{item.medName}</td>
-                  <td className="border px-2 py-1">{item.manfName}</td>
-                  <td className="border px-2 py-1">{item.manfDate}</td>
-                  <td className="border px-2 py-1">{item.expDate}</td>
-                  <td className="border px-2 py-1">{item.buyingCost}</td>
-                  <td className="border px-2 py-1">{item.mrp}</td>
-                  <td className="border px-2 py-1">{item.discount}</td>
-                  <td className="border px-2 py-1">{item.consumerCost}</td>
-                  <td className="border px-2 py-1">{item.prescription}</td>
-                </tr>
-              ))}
+              <tr className="text-center">
+                <td colSpan={tableHeaders.length} className="py-4 text-gray-400">
+                  No records available.
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
