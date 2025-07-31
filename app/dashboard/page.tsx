@@ -42,7 +42,10 @@ export default function StockPage() {
           >
             <FaEye /> View Record
           </button>
-          <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
+          <button
+            className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2"
+            onClick={() => router.push("/sell")}
+          >
             <FaShoppingCart /> Sell
           </button>
         </div>
