@@ -18,7 +18,12 @@ export default function StockPage() {
         <nav className="flex space-x-6 font-medium">
           <a href="#" className="text-gray-600 hover:text-black">Profile</a>
           <a href="#" className="text-orange-500 font-semibold">Stock</a>
-          <a href="#" className="text-gray-600 hover:text-black">Customer</a>
+          <button
+            onClick={() => router.push("/customer")}
+            className="text-gray-600 hover:text-black"
+          >
+            Customer
+          </button>
           <a href="#" className="text-gray-600 hover:text-black">Payment</a>
           <a href="#" className="text-gray-600 hover:text-black">Reports</a>
           <a href="#" className="text-gray-600 hover:text-black">Sales</a>
