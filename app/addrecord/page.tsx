@@ -1,7 +1,11 @@
+"use client";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { FaPlus, FaEye, FaShoppingCart } from "react-icons/fa";
 
 export default function StockPage() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen bg-white text-gray-800 flex flex-col">
       {/* Header */}
@@ -26,7 +30,10 @@ export default function StockPage() {
         <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
           <FaPlus /> Add Record
         </button>
-        <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
+        <button
+          onClick={() => router.push("/viewrecord")}
+          className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2"
+        >
           <FaEye /> View Record
         </button>
         <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center gap-2">
@@ -36,7 +43,7 @@ export default function StockPage() {
 
       {/* Main Section */}
       <main className="flex flex-col md:flex-row gap-8 px-6 pb-8 flex-grow">
-        {/* Left: Form */}
+        {/* Form */}
         <form className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-xl">
           {[
             "Batch No", "Med Name", "Manf. Name", "Manf. Date", "Exp. Date",
@@ -59,7 +66,7 @@ export default function StockPage() {
           </button>
         </form>
 
-        {/* Right: Info + Image */}
+        {/* Info + Image */}
         <div className="flex flex-col items-center text-center md:text-left md:items-start max-w-md mx-auto">
           <h2 className="text-3xl font-semibold mb-2">StockEasy</h2>
           <p className="text-gray-600 mb-6">
